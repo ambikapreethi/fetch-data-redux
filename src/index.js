@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import FetchDataFromApi from './components/fetchData';
+import { Provider } from 'react-redux';
+import dataSlice, {reducer} from './pages/dataSlice'; 
+import store from './components/store';
+import FetchData from './components/fetchData';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+  <FetchData />
+</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
